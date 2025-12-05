@@ -5,122 +5,123 @@
   <title>Luma — Illuminate your learning</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    :root {
-      --luma-bg: #F7F6EF;
-      --luma-accent: #CBD8B1;
-      --luma-deep: #222220;
-      --luma-text: #222220;
-      --luma-text-soft: #3A3A38;
-      --luma-placeholder: #7A7A75;
-      --luma-border: #CBD8B1;
-    }
+  :root {
+    --luma-bg: #F7F6EF;
+    --luma-accent: #CBD8B1;
+    --luma-deep: #222220;
+    --luma-text: #222220;
+  }
 
-    * {
-      box-sizing: border-box;
-    }
+  * {
+    box-sizing: border-box;
+  }
 
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter",
-        "SF Pro Text", sans-serif;
-      background: var(--luma-bg);
-      color: var(--luma-text);
-      -webkit-font-smoothing: antialiased;
-    }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter",
+      "SF Pro Text", sans-serif;
+    background: var(--luma-bg);
+    color: var(--luma-text);
+    -webkit-font-smoothing: antialiased;
+  }
 
+  header {
+    padding: 20px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+
+  .header-right {
+    font-size: 13px;
+    color: rgba(34, 34, 32, 0.55);
+  }
+
+  main.hero {
+    flex: 1; /* pushes footer to bottom */
+    max-width: 720px;
+    margin: 48px auto 32px; /* less top/bottom space */
+    padding: 0 20px;
+    text-align: left;
+  }
+
+  .hero-kicker {
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(34, 34, 32, 0.55);
+    margin-bottom: 10px;
+  }
+
+  .hero-title {
+    font-size: 38px;
+    line-height: 1.1;
+    font-weight: 600;
+    margin: 0 0 14px;
+  }
+
+  .hero-body {
+    font-size: 17px;
+    line-height: 1.5;
+    color: rgba(34, 34, 32, 0.8);
+    max-width: 560px;
+    margin: 0 0 14px;
+  }
+
+  .hero-sub {
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(34, 34, 32, 0.65);
+    max-width: 520px;
+    margin: 0 0 22px;
+  }
+
+  .signup-wrapper {
+    max-width: 520px;
+    margin-top: 0; /* keep it tight to the text */
+  }
+
+  .signup-wrapper > script {
+    display: block;
+  }
+
+  .disclaimer {
+    font-size: 12px;
+    color: rgba(34, 34, 32, 0.55);
+    margin-top: 10px;
+  }
+
+  .footer {
+    font-size: 13px;
+    color: rgba(34, 34, 32, 0.55);
+    text-align: center;
+    padding: 20px 16px 18px;
+    border-top: 1px solid rgba(34, 34, 32, 0.04);
+  }
+
+  @media (max-width: 640px) {
     header {
-      padding: 20px 28px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      padding: 16px 18px;
     }
-
-    .logo {
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      font-size: 18px;
-      text-transform: uppercase;
-      color: var(--luma-text);
+    main.hero {
+      margin-top: 32px;
     }
-
-    .header-right {
-      font-size: 13px;
-      color: rgba(34, 34, 32, 0.55);
-    }
-
-    .hero {
-      max-width: 720px;
-      margin: 72px auto 80px;
-      padding: 0 20px;
-      text-align: left;
-    }
-
-    .hero-kicker {
-      font-size: 13px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(34, 34, 32, 0.55);
-      margin-bottom: 12px;
-    }
-
     .hero-title {
-      font-size: 40px;
-      line-height: 1.1;
-      font-weight: 600;
-      margin: 0 0 18px;
-      color: var(--luma-text);
+      font-size: 30px;
     }
+  }
+</style>
 
-    .hero-body {
-      font-size: 17px;
-      line-height: 1.5;
-      color: rgba(34, 34, 32, 0.8);
-      max-width: 560px;
-      margin-bottom: 18px;
-    }
-
-    .hero-sub {
-      font-size: 14px;
-      line-height: 1.5;
-      color: rgba(34, 34, 32, 0.65);
-      max-width: 520px;
-      margin-bottom: 26px;
-    }
-
-    .signup-wrapper {
-      max-width: 520px;
-    }
-
-    /* Beehiiv embed wrapper – just spacing */
-    .signup-wrapper > script {
-      display: block;
-    }
-
-    .disclaimer {
-      font-size: 12px;
-      color: rgba(34, 34, 32, 0.55);
-      margin-top: 10px;
-    }
-
-    .footer {
-      font-size: 13px;
-      color: rgba(34, 34, 32, 0.55);
-      text-align: center;
-      padding: 40px 16px 28px;
-    }
-
-    @media (max-width: 640px) {
-      header {
-        padding: 16px 18px;
-      }
-      .hero {
-        margin-top: 56px;
-      }
-      .hero-title {
-        font-size: 30px;
-      }
-    }
-  </style>
 </head>
 <body>
   <header>
@@ -129,13 +130,12 @@
   </header>
 
   <main class="hero">
-    <div class="hero-kicker">AI course companion</div>
+    <div class="hero-kicker">Your personal tutor, reimagined</div>
 
     <h1 class="hero-title">Illuminate your learning.</h1>
 
     <p class="hero-body">
-      Luma is a gentle, intelligent companion that helps you make sense of
-      complex courses with clear, calm explanations instead of last-minute panic.
+      Luma helps you understand complex material with clear, calm explanations instead of last-minute panic.
     </p>
 
     <div class="signup-wrapper">
