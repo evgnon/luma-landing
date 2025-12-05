@@ -34,12 +34,21 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  .page-shell {
+  flex: 1;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 24px 24px 32px;
+  display: flex;
+  flex-direction: column;
+}
+
   header {
-    padding: 20px 28px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
 
   .logo {
     font-weight: 600;
@@ -135,28 +144,29 @@
 
 </head>
 <body>
-  <header>
-    <div class="logo">Luma</div>
-    <div class="header-right">Early access</div>
-  </header>
+  <div class="page-shell">
+    <header>
+      <div class="logo">Luma</div>
+      <div class="header-right">Early access</div>
+    </header>
 
-  <main class="hero">
-    <div class="hero-kicker">Your personal tutor, reimagined</div>
+    <main class="hero">
+      <div class="hero-kicker">YOUR PERSONAL TUTOR, REIMAGINED</div>
+      <h1 class="hero-title">Illuminate your learning.</h1>
+      <p class="hero-body">
+        Luma helps you understand complex material with clear, calm explanations
+        instead of last-minute panic.
+      </p>
 
-    <h1 class="hero-title">Illuminate your learning.</h1>
-
-    <p class="hero-body">
-      Luma helps you understand complex material with clear, calm explanations instead of last-minute panic.
-    </p>
-
-    <div class="signup-wrapper">
+      <div class="signup-wrapper">
     <script async src="https://subscribe-forms.beehiiv.com/embed.js"></script><iframe src="https://subscribe-forms.beehiiv.com/f6ad303c-50d1-49ca-8046-a681d9ff12c2" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="width: 500px; height: 47px; margin: 0; border-radius: 0px 0px 0px 0px !important; background-color: transparent; box-shadow: 0 0 #0000; max-width: 100%;"></iframe>
     </div>
 
-    <div class="disclaimer">
-      No noise. Just occasional updates and an email when Luma is ready for you.
-    </div>
-  </main>
+      <div class="disclaimer">
+        No noise. Just occasional updates and an email when Luma is ready for you.
+      </div>
+    </main>
+  </div>
 
   <footer class="footer">
     © 2025 Luma. Built with care for students who want to learn with clarity.
