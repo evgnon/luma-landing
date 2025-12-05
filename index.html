@@ -1,93 +1,169 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Luma — Illuminate Your Learning</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            background: #FAFAF7;
-            color: #2B2B2B;
-        }
-        header {
-            padding: 24px 48px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 22px;
-            font-weight: 600;
-        }
-        .hero {
-            text-align: center;
-            padding: 120px 24px;
-        }
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 16px;
-            font-weight: 600;
-        }
-        .hero p {
-            font-size: 20px;
-            max-width: 640px;
-            margin: 0 auto 32px auto;
-            color: #4a4a4a;
-        }
-        .cta {
-            padding: 16px 32px;
-            background: #A8D5A2;
-            color: #2B2B2B;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 18px;
-        }
-        .footer {
-            text-align: center;
-            padding: 48px;
-            font-size: 14px;
-            color: #777;
-        }
-        .sprout {
-            width: 80px;
-            height: 80px;
-            background: #A8D5A2;
-            border-radius: 50%;
-            margin: 32px auto 0 auto;
-            position: relative;
-        }
-        .sprout::before {
-            content: "";
-            position: absolute;
-            width: 22px;
-            height: 40px;
-            background: #7BAB8D;
-            border-radius: 50px 50px 0 0;
-            top: -28px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <title>Luma — Illuminate Your Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+      background: #FAFAF7;
+      color: #2B2B2B;
+    }
+    header {
+      padding: 24px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .hero {
+      text-align: center;
+      padding: 96px 24px 80px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: 42px;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    .hero p {
+      font-size: 18px;
+      line-height: 1.5;
+      max-width: 640px;
+      margin: 0 auto 32px auto;
+      color: #4a4a4a;
+    }
+
+    .subheadline {
+      font-size: 15px;
+      margin-bottom: 24px;
+      color: #6b6b6b;
+    }
+
+    .signup-form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .signup-form input[type="email"] {
+      padding: 12px 14px;
+      min-width: 260px;
+      border-radius: 8px;
+      border: 1px solid #d5d5cf;
+      font-size: 15px;
+      outline: none;
+      background: #ffffff;
+    }
+    .signup-form input[type="email"]:focus {
+      border-color: #7BAB8D;
+      box-shadow: 0 0 0 1px rgba(123, 171, 141, 0.4);
+    }
+    .signup-form button {
+      padding: 12px 20px;
+      border-radius: 8px;
+      border: none;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      background: #A8D5A2;
+      color: #2B2B2B;
+      transition: background 0.15s ease, transform 0.1s ease;
+    }
+    .signup-form button:hover {
+      background: #99c895;
+      transform: translateY(-1px);
+    }
+    .signup-helper {
+      font-size: 13px;
+      color: #8a8a81;
+    }
+
+    .sprout {
+      width: 80px;
+      height: 80px;
+      background: #A8D5A2;
+      border-radius: 50%;
+      margin: 40px auto 0 auto;
+      position: relative;
+    }
+    .sprout::before {
+      content: "";
+      position: absolute;
+      width: 22px;
+      height: 40px;
+      background: #7BAB8D;
+      border-radius: 50px 50px 0 0;
+      top: -28px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 40px 24px 32px;
+      font-size: 14px;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 18px 20px;
+      }
+      .hero {
+        padding-top: 72px;
+      }
+      .hero h1 {
+        font-size: 32px;
+      }
+      .signup-form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .signup-form button {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
 <header>
-    <div class="logo">Luma</div>
+  <div class="logo">Luma</div>
 </header>
 
 <section class="hero">
-    <h1>Illuminate Your Learning</h1>
-    <p>Luma provides the light you need to grow your knowledge — a calm, guided way to understand your courses and see your progress take root.</p>
-    <a href="#" class="cta">Notify Me When Luma Launches</a>
-    <div class="sprout"></div>
-</section>
+  <h1>Illuminate your learning.</h1>
+  <p>
+    Luma provides the light you need to grow your knowledge — a calm, guided way
+    to understand your courses and see your progress take root.
+  </p>
 
-<div class="footer">
-    © 2025 Luma — Grow with clarity.
+  <p class="subheadline">
+    I’m building an AI course companion for engineering students. Leave your email and I’ll let you know when Luma is ready.
+  </p>
+
+  <div class="signup-wrapper">
+    <script async src="https://subscribe-forms.beehiiv.com/embed.js"></script><iframe src="https://subscribe-forms.beehiiv.com/f6ad303c-50d1-49ca-8046-a681d9ff12c2" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="width: 560px; height: 207px; margin: 0; border-radius: 0px 0px 0px 0px !important; background-color: transparent; box-shadow: 0 0 #0000; max-width: 100%;"></iframe>
 </div>
 
+  <div class="signup-helper">
+    No spam, just a short launch update (and maybe early access).
+  </div>
+
+  <div class="sprout"></div>
+</section>
+
+<footer class="footer">
+  © 2025 Luma — Grow with clarity.
+</footer>
 </body>
 </html>
