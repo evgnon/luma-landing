@@ -16,9 +16,15 @@
     box-sizing: border-box;
   }
 
+  html,
   body {
     margin: 0;
-    min-height: 100vh;
+    padding: 0;
+    height: 100%;        /* make viewport height available to flex */
+  }
+
+  body {
+    min-height: 100vh;   /* ensure at least full viewport height */
     display: flex;
     flex-direction: column;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter",
@@ -48,10 +54,11 @@
   }
 
   main.hero {
-    flex: 1; /* pushes footer to bottom */
+    flex: 1;                         /* this pushes footer down */
     max-width: 720px;
-    margin: 48px auto 32px; /* less top/bottom space */
-    padding: 0 20px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 32px 20px 24px;         /* smaller bottom padding */
     text-align: left;
   }
 
@@ -88,7 +95,6 @@
 
   .signup-wrapper {
     max-width: 520px;
-    margin-top: 0; /* keep it tight to the text */
   }
 
   .signup-wrapper > script {
@@ -105,8 +111,8 @@
     font-size: 13px;
     color: rgba(34, 34, 32, 0.55);
     text-align: center;
-    padding: 20px 16px 18px;
-    border-top: 1px solid rgba(34, 34, 32, 0.04);
+    padding: 16px 16px 18px;
+    border-top: 1px solid rgba(34, 34, 32, 0.06);
   }
 
   @media (max-width: 640px) {
@@ -114,13 +120,14 @@
       padding: 16px 18px;
     }
     main.hero {
-      margin-top: 32px;
+      padding-top: 24px;
     }
     .hero-title {
       font-size: 30px;
     }
   }
 </style>
+
 
 </head>
 <body>
@@ -139,7 +146,7 @@
     </p>
 
     <div class="signup-wrapper">
-    <script async src="https://subscribe-forms.beehiiv.com/embed.js"></script><iframe src="https://subscribe-forms.beehiiv.com/f6ad303c-50d1-49ca-8046-a681d9ff12c2" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="width: 560px; height: 207px; margin: 0; border-radius: 0px 0px 0px 0px !important; background-color: transparent; box-shadow: 0 0 #0000; max-width: 100%;"></iframe>
+    <script async src="https://subscribe-forms.beehiiv.com/embed.js"></script><iframe src="https://subscribe-forms.beehiiv.com/f6ad303c-50d1-49ca-8046-a681d9ff12c2" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="width: 500px; height: 47px; margin: 0; border-radius: 0px 0px 0px 0px !important; background-color: transparent; box-shadow: 0 0 #0000; max-width: 100%;"></iframe>
     </div>
 
     <div class="disclaimer">
